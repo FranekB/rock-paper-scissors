@@ -58,14 +58,17 @@
           else if (playerChoice == "Scissors"){
             switch(computerSelection){
               case "Rock":
-                console.log("Scissors loses to Rock. Computer wins!")
+                console.log("Scissors loses to Rock. Computer wins!");
                 return "Player Lose";
               case "Paper":
-                console.log("Scissors beats Paper. Player wins!")
+                console.log("Scissors beats Paper. Player wins!");
                 return "Player Win";
             }
           }
+          else {
+            console.log("Wrong input! No change in a score!");
 
+          }
       }
     }
     //function that plays 5 games
@@ -74,15 +77,17 @@
       let computerScore = 0;
       let roundCounter = 1
       for (let i = 0; i < 5; i++){
-        let result = playGame(prompt("What you choose? Rock/Paper/Scissors."), computerPlay());
         console.log(`Round ${roundCounter}`);
-        roundCounter++
+        roundCounter++;
+        let result = playGame(prompt("What you choose? Rock/Paper/Scissors."), computerPlay());
+
         if(result == "Player Win"){
           playerScore++;
         }
         else if (result == "Player Lose"){
           computerScore++;
         }
+
         console.log(`Computer Score ${computerScore} : ${playerScore} Player Score`);
       }
       if (playerScore > computerScore){
