@@ -28,7 +28,8 @@
       function playGame(playerSelection, computerSelection){
         let playerChoice = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase();
         if (playerChoice == computerSelection){
-          return `${playerChoice} is equal to ${computerSelection}. It's a tie!`
+          console.log(`${playerChoice} is equal to ${computerSelection}. It's a Tie!`);
+          return "Tie";
         }
 
         else {
@@ -36,26 +37,32 @@
           if (playerChoice == "Rock"){
               switch(computerSelection){
                 case "Paper":
-                  return "Rock loses to Paper. Computer wins!";
-                case "Scissors":
-                  return "Rock beats Scissors. Player wins!";
+                  console.log("Rock loses to Paper.");
+                  return "Player Lose";
+                case "Paper":
+                  console.log("Rock beats Paper. Player wins!");
+                  return "Player Win";
               }
           }
           else if (playerChoice == "Paper"){
             switch(computerSelection){
               case "Rock":
-                return "Paper beats Rock. Player wins!";
+                console.log("Paper beats Rock. Player wins!");
+                return "Player Win";
               case "Scissors":
-                return "Paper loses to Scissors. Computer wins!";
+                console.log("Paper loses to scissors. Computer wins!");
+                return "Player Lose";
             }
           }
 
           else if (playerChoice == "Scissors"){
             switch(computerSelection){
               case "Rock":
-                return "Scissors loses to Rock. Computer wins!";
+                console.log("Scissors loses to Rock. Computer wins!")
+                return "Player Lose";
               case "Paper":
-                return "Scissors beats Paper. Player wins!"
+                console.log("Scissors beats Paper. Player wins!")
+                return "Player Win";
             }
           }
 
@@ -70,11 +77,10 @@
         let result = playGame(prompt("What you choose? Rock/Paper/Scissors."), computerPlay());
         console.log(`Round ${roundCounter}`);
         roundCounter++
-        console.log(result);
-        if(result == "Rock beats Scissors. Player wins!" || result == "Paper beats Rock. Player wins!" || result == "Scissors beats Paper. Player wins!"){
+        if(result == "Player Win"){
           playerScore++;
         }
-        else if (result == "Rock loses to Paper. Computer wins!" || result == "Paper loses to Scissors. Computer wins!" || result == "Scissors loses Rock. Computer wins!"){
+        else if (result == "Player Lose"){
           computerScore++;
         }
         console.log(`Computer Score ${computerScore} : ${playerScore} Player Score`);
