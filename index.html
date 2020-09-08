@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript rock paper scissors game!</title>
+    <script>
+      //function to get computerChoice in a game.
+      function computerPlay(){
+
+        let randomNumber = Math.floor(Math.random() * 3);
+        let computerChoice;
+        //Get computer choice based of randomNumber value
+        switch(randomNumber){
+          case 0:
+            computerChoice = "Rock";
+            break;
+          case 1:
+            computerChoice = "Paper";
+            break;
+          case 2:
+            computerChoice = "Scissors";
+            break;
+          }
+
+          return computerChoice
+      }
+      //function that plays a game
+      function playGame(playerSelection, computerSelection){
+        let playerChoice = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase();
+        if (playerChoice == computerSelection){
+          return `${playerChoice} is equal to ${computerSelection}. It's a tie!`
+        }
+
+        else {
+
+          if (playerChoice == "Rock"){
+              switch(computerSelection){
+                case "Paper":
+                  return "Rock loses to Paper. Computer wins!";
+                case "Scissors":
+                  return "Rock beats Scissors. Player wins!";
+              }
+          }
+          else if (playerChoice == "Paper"){
+            switch(computerSelection){
+              case "Rock":
+                return "Paper beats Rock. Player wins!";
+              case "Scissors":
+                return "Paper loses to Scissors. Computer wins!";
+            }
+          }
+
+          else if (playerChoice == "Scissors"){
+            switch(computerSelection){
+              case "Rock":
+                return "Scissors loses to Rock. Computer wins!";
+              case "Paper":
+                return "Scissors beats Paper. Player wins!"
+            }
+          }
+
+      }
+    }
+    //function that plays 5 games
+    function game(){
+      let playerScore = 0;
+      let computerScore = 0;
+      let roundCounter = 1
+      for (let i = 0; i < 5; i++){
+        let result = playGame(prompt("What you choose? Rock/Paper/Scissors."), computerPlay());
+        console.log(`Round ${roundCounter}`);
+        roundCounter++
+        console.log(result);
+        if(result == "Rock beats Scissors. Player wins!" || result == "Paper beats Rock. Player wins!" || result == "Scissors beats Paper. Player wins!"){
+          playerScore++;
+        }
+        else if (result == "Rock loses to Paper. Computer wins!" || result == "Paper loses to Scissors. Computer wins!" || result == "Scissors loses Rock. Computer wins!"){
+          computerScore++;
+        }
+        console.log(`Computer Score ${computerScore} : ${playerScore} Player Score`);
+      }
+      if (playerScore > computerScore){
+        console.log("Player wins the game")
+      }
+      else if (playerScore < computerScore){
+        console.log("Computer wins the game")
+      }
+      else{
+        console.log("It's a tie after 5 rounds!")
+      }
+    }
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>
