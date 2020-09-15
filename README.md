@@ -1,2 +1,2 @@
 # rock-paper-scissors
-The rock paper scissors javascript console game
+Simple rock paper scissors game with GUI. Made with use of javascript DOM manipulation, HTML and CSS.
