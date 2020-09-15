@@ -1,0 +1,182 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*CSS Styles */
+
+html {
+	font-family: Helvetica, sans-serif;
+	font-size: 20px;
+}
+
+h1 {
+	font-size: 2rem;
+	text-align: center;
+	margin-top: 3vw;
+}
+
+h2{
+	font-size: 1.5rem;
+	text-align: center;
+}
+
+h3{
+	font-size: 1.25rem;
+	text-align: center;
+}
+
+#ui-section {
+	width: 50%;
+	min-width: 400px;
+	height: auto;
+	margin: 5vw auto;
+}
+
+
+#player-img{
+	width:20%;
+	height: auto;
+}
+
+#computer-img{
+	width:20%;
+	height: auto
+}
+.scores{
+	width: 25%;
+	min-width: 120px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#scores {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+#pick-choice {
+	display: flex;
+	justify-content: space-around;
+	padding-top: 15px;
+}
+
+#pick-choice > div {
+	width: 25%;
+	text-align: center;
+}
+
+.choice-img {
+	width: 75%;
+	height: auto;
+}
+
+.choice-img:hover{
+	width:90%;
+}
+
+#result {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	text-align: center;
+}
+
+
+body {
+	background-color: #2191FB
+}
+
+#ui-section {
+	background-color: #C69DD2;
+	border-radius: 15px;
+	padding-top: 30px;
+}
+
+#choose {
+	margin: 10px 15px 15px 15px;
+	font-size: 2rem;
+}
+
+#choose-text {
+	margin-top: 50px;
+}
+
+p {
+	margin: 5px;
+}
+
+.score-text {
+	font-size: 1rem;
+}
+
+#rules {
+	font-size: 15px;
+}
+
+.scores > h3 {
+	margin-top: 10px;
+}
+
+#third-rule {
+	align-self: flex-start;
+}
+
+#play-again {
+	padding-bottom: 15px;
+	display: flex;
+	justify-content: center;
+}
+
+button {
+	background: lightgreen;
+	border: 1px solid black;
+	width:20%;
+	height:50px;
+}
